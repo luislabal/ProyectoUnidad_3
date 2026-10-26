@@ -27,7 +27,6 @@ public class servlet extends HttpServlet {
         }
     }
 
-    // Muestra la lista de encantamientos
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
