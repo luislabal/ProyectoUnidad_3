@@ -1,0 +1,46 @@
+
+/* 
+    Created on : 25 oct 2026, 6:49:19 p.m.
+    Author     : LUIS CARLOS LABORIN ALVAREZ
+*/
+
+
+body {
+    background-color: #866043;  
+    color: white;
+    text-align: center;     
+    font-family: monospace;
+}
+
+section {
+    background-color: #7f7f7f;  
+    border: 4px solid black;
+    width: 400px;
+    margin: 30px auto;         
+    padding: 20px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    width: 90%;
+}
+
+button {
+    background-color: #5d9b3a;  
+    color: white;
+    border: 3px solid black;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4c8530;   
+}
+
+.libro {
+    background-color: #3b2a1a;
+    border: 3px solid black;
+    padding: 10px;
+    margin: 10px 0;
+}
