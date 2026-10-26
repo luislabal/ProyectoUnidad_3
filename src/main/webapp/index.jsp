@@ -23,6 +23,10 @@
                     <input name="nombre" type="text" required />
                 </div>
                 <div>
+                    <label>Foto (URL)</label>
+                    <input name="foto" type="text" required />
+                </div>
+                <div>
                     <label>Precio</label>
                     <input name="precio" type="number" required />
                 </div>
@@ -35,10 +39,12 @@
             <form method="GET" action="libro">
                 <button type="submit">Matar Aldeano</button>
             </form>
+
             <c:if test="${not empty lista}">
                 <div class="encanta">
                     <c:forEach var="lib" items="${lista}">
                         <div class="libro">
+                            <img src="${lib.foto}" alt="${lib.name}" />
                             <p>
                                 <strong>${lib.name}</strong>
                                 <br/>

@@ -39,7 +39,7 @@ public class servlet extends HttpServlet {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-               lista.add(new libros(rs.getString("nombre"), rs.getInt("id"), rs.getInt("precio")));
+               lista.add(new libros(rs.getString("nombre"), rs.getInt("id"), rs.getInt("precio"), rs.getString("foto")));
             }
 
         } catch (SQLException e) {
@@ -56,19 +56,20 @@ public class servlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.setCharacterEncoding("UTF-8");
-        String nombre = request.getParameter("nombre");
+       String nombre = request.getParameter("nombre");
+        String foto = request.getParameter("foto");
         int precio = Integer.parseInt(request.getParameter("precio"));
 
-        String sql = "INSERT INTO Encantamientos (nombre, precio) VALUES (?, ?)";
+        String sql = "INSERT INTO Encantamientos (nombre, precio, foto) VALUES (?, ?, ?)";
 
         try (Connection con = DriverManager.getConnection(conexion, user, password);
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, nombre);
             ps.setInt(2, precio);
+            ps.setString(3, foto);
             ps.executeUpdate();
-
-        } catch (SQLException e) {
+        }catch (SQLException e) {
             throw new ServletException("Error al guardar el encantamiento", e);
         }
 
